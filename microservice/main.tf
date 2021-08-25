@@ -49,7 +49,7 @@ resource "aws_autoscaling_group" "microservice" {
 resource "aws_launch_configuration" "microservice" {
   name          = "${var.student_alias}-${var.name}"
   image_id      = data.aws_ami.ubuntu.id
-  instance_type = "t2.large"
+  instance_type = "t2.micro"
   user_data     = data.template_file.user_data.rendered
 
   key_name        = var.key_name
